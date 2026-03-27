@@ -2,3 +2,6 @@ node_modules
 dist
 .env
 .DS_Store
+
+# Gammel/lokal kopi – kildekoden ligger i rot (src/, public/)
+mrcoffee.no---kaffeløsninger-til-kontoret/

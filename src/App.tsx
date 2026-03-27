@@ -525,8 +525,7 @@ export default function App() {
             alt="Sustainable Coffee Production" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-chinese-black/80 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-b from-chinese-black via-transparent to-chinese-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/55 via-[#0f0c0a]/48 to-[#0d0907]/94" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
