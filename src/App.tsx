@@ -275,11 +275,14 @@ export default function App() {
                 <Button>Bestill kaffeløsning</Button>
                 <Button variant="secondary">Kontakt oss</Button>
               </div>
-              <p className="mt-6 max-w-2xl text-xs md:text-sm text-white/45 italic leading-relaxed">
-                * Gjelder utvalgte løsninger og forutsetter normalt jevnt forbruk. Kontakt oss for anbefaling til din bedrift.
-              </p>
             </motion.div>
           </div>
+        </div>
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-7xl px-7 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-4 md:px-6 md:pb-8">
+          <p className="max-w-3xl text-xs text-white/45 italic leading-relaxed md:text-sm">
+            * Gjelder utvalgte løsninger og forutsetter normalt jevnt forbruk. Kontakt oss for anbefaling til din bedrift.
+          </p>
         </div>
 
         {/* Decorative elements */}
