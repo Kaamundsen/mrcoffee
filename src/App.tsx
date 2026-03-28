@@ -493,7 +493,7 @@ export default function App() {
               </div>
             </div>
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4 items-start">
+              <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                     <img src="/images/om-oss-kaffe.jpg" alt="Coffee" className="w-full h-full object-cover" />
@@ -503,7 +503,7 @@ export default function App() {
                       <img
                         src="/images/MrCoffee_Logo.svg"
                         alt=""
-                        className="w-[4.937625rem] md:w-[8.229375rem] h-auto object-contain opacity-100 -translate-x-[3px] -translate-y-[calc(0.75rem+9px)] md:-translate-x-[5px] md:-translate-y-[calc(1.25rem+15px)]"
+                        className="w-[5.92515rem] md:w-[9.87525rem] h-auto object-contain opacity-100 -translate-x-[3px] -translate-y-[calc(0.75rem+29px)] md:-translate-x-[5px] md:-translate-y-[calc(1.25rem+35px)]"
                         aria-hidden
                       />
                     </div>
@@ -573,9 +573,9 @@ export default function App() {
 
       {/* Kontakt Section */}
       <section id="kontakt" className="py-24 md:py-32 atmosphere-bg">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="glass p-6 md:p-20 rounded-[40px] md:rounded-[60px] relative overflow-hidden">
-            <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="glass p-12 md:p-20 rounded-[60px] relative overflow-hidden">
+            <div className="relative z-10 grid md:grid-cols-2 gap-16">
               <div>
                 <SectionHeading 
                   subtitle="Bestilling / Kontakt" 
