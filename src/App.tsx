@@ -279,12 +279,6 @@ export default function App() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-7xl px-7 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-4 md:px-6 md:pb-8">
-          <p className="max-w-3xl text-[10px] text-white/[0.225] italic leading-relaxed md:text-xs">
-            * Gjelder utvalgte løsninger og forutsetter normalt jevnt forbruk. Kontakt oss for anbefaling til din bedrift.
-          </p>
-        </div>
-
         {/* Decorative elements */}
         <motion.div 
           initial={{ opacity: 0 }}
