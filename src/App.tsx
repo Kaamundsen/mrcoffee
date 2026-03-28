@@ -52,85 +52,98 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center">
-          <img
-            src="/images/MrCoffee_Logo.svg"
-            alt="MrCoffee Logo"
-            className={`w-auto transition-[height] duration-300 ease-out ${isScrolled ? 'h-16' : 'h-20'}`}
-          />
-        </div>
+    <>
+      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <div className="flex items-center">
+            <img
+              src="/images/MrCoffee_Logo.svg"
+              alt="MrCoffee Logo"
+              className={`w-auto transition-[height] duration-300 ease-out ${isScrolled ? 'h-16' : 'h-20'}`}
+            />
+          </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <div 
-              key={link.name} 
-              className="relative group"
-              onMouseEnter={() => link.submenu && setIsDropdownOpen(true)}
-              onMouseLeave={() => link.submenu && setIsDropdownOpen(false)}
-            >
-              <a 
-                href={link.href} 
-                className="text-[13px] uppercase tracking-widest hover:text-antique-brass transition-colors flex items-center gap-1"
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <div 
+                key={link.name} 
+                className="relative group"
+                onMouseEnter={() => link.submenu && setIsDropdownOpen(true)}
+                onMouseLeave={() => link.submenu && setIsDropdownOpen(false)}
               >
-                {link.name}
-                {link.submenu && <ChevronRight size={12} className="rotate-90" />}
-              </a>
-              
-              {link.submenu && (
-                <AnimatePresence>
-                  {isDropdownOpen && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-4 w-48 glass rounded-xl overflow-hidden py-2"
-                    >
-                      {link.submenu.map((sub) => (
-                        <a 
-                          key={sub.name} 
-                          href={sub.href} 
-                          className="block px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-white/5 hover:text-antique-brass transition-colors"
-                        >
-                          {sub.name}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              )}
-            </div>
-          ))}
+                <a 
+                  href={link.href} 
+                  className="text-[13px] uppercase tracking-widest hover:text-antique-brass transition-colors flex items-center gap-1"
+                >
+                  {link.name}
+                  {link.submenu && <ChevronRight size={12} className="rotate-90" />}
+                </a>
+                
+                {link.submenu && (
+                  <AnimatePresence>
+                    {isDropdownOpen && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="absolute top-full left-0 mt-4 w-48 glass rounded-xl overflow-hidden py-2"
+                      >
+                        {link.submenu.map((sub) => (
+                          <a 
+                            key={sub.name} 
+                            href={sub.href} 
+                            className="block px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-white/5 hover:text-antique-brass transition-colors"
+                          >
+                            {sub.name}
+                          </a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            type="button"
+            className="lg:hidden text-white z-[70] relative"
+            aria-label="Åpne meny"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <Menu size={24} />
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Toggle */}
-        <button className="lg:hidden text-white" onClick={() => setIsMobileMenuOpen(true)}>
-          <Menu size={24} />
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
+      {/* Utenfor nav: unngår stacking/clipping med glass (backdrop-filter) på mobil */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 bg-chinese-black z-[60] flex flex-col p-8 overflow-y-auto"
+            className="fixed inset-0 z-[100] flex flex-col bg-chinese-black p-8 text-white overflow-y-auto overscroll-contain"
+            style={{ WebkitOverflowScrolling: 'touch', paddingTop: 'max(2rem, env(safe-area-inset-top))', paddingBottom: 'max(2rem, env(safe-area-inset-bottom))' }}
           >
-            <div className="flex justify-end">
-              <button onClick={() => setIsMobileMenuOpen(false)}>
+            <div className="flex shrink-0 justify-end">
+              <button
+                type="button"
+                className="text-white p-2 -mr-2"
+                aria-label="Lukk meny"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 <X size={32} />
               </button>
             </div>
-            <div className="flex flex-col gap-6 mt-8">
+            <div className="flex flex-col gap-6 mt-8 text-white">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <a 
                     href={link.href} 
-                    className="text-2xl font-serif hover:text-antique-brass block"
+                    className="text-2xl font-serif text-white hover:text-antique-brass block"
                     onClick={() => !link.submenu && setIsMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -141,7 +154,7 @@ const Navbar = () => {
                         <a 
                           key={sub.name} 
                           href={sub.href} 
-                          className="text-lg font-serif text-white/60 hover:text-antique-brass"
+                          className="text-lg font-serif text-white/70 hover:text-antique-brass"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {sub.name}
@@ -155,7 +168,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 };
 
@@ -408,15 +421,15 @@ export default function App() {
       <section id="service" className="py-24 md:py-32 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div className="order-2 md:order-1">
-              <div className="relative">
-                <div className="aspect-square rounded-full border-2 border-dashed border-antique-brass/30 p-8 animate-[spin_20s_linear_infinite]">
-                  <div className="w-full h-full rounded-full border border-antique-brass/10" />
+            <div className="order-2 md:order-1 flex justify-center md:block">
+              <div className="relative aspect-square w-full max-w-[min(100%,18rem)] shrink-0 md:max-w-none">
+                <div className="absolute inset-0 aspect-square rounded-full border-2 border-dashed border-antique-brass/30 p-6 md:p-8 animate-[spin_20s_linear_infinite]">
+                  <div className="h-full w-full rounded-full border border-antique-brass/10" />
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="text-center">
-                    <span className="text-7xl font-serif text-antique-brass block mb-2">1-2</span>
-                    <span className="text-sm uppercase tracking-widest text-white/50">Timer responstid</span>
+                    <span className="text-5xl sm:text-6xl md:text-7xl font-serif text-antique-brass block mb-2">1-2</span>
+                    <span className="text-xs sm:text-sm uppercase tracking-widest text-white/50">Timer responstid</span>
                   </div>
                 </div>
               </div>
@@ -490,7 +503,7 @@ export default function App() {
                       <img
                         src="/images/MrCoffee_Logo.svg"
                         alt=""
-                        className="w-[8.229375rem] h-auto object-contain opacity-100 -translate-x-[5px] -translate-y-[calc(1.25rem+15px)]"
+                        className="w-[4.937625rem] md:w-[8.229375rem] h-auto object-contain opacity-100 -translate-x-[3px] -translate-y-[calc(0.75rem+9px)] md:-translate-x-[5px] md:-translate-y-[calc(1.25rem+15px)]"
                         aria-hidden
                       />
                     </div>
@@ -605,7 +618,7 @@ export default function App() {
 
               <div className="glass p-8 md:p-12 rounded-3xl">
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Navn</label>
                       <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="Ditt navn" />
