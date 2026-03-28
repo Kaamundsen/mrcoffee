@@ -427,9 +427,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-7 md:px-6">
           <div className="glass p-12 rounded-[40px] flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
-              <h3 className="text-3xl font-serif mb-4">Kaffe, tilbehør og våre utvalgte anbefalinger</h3>
+              <h3 className="text-3xl font-serif mb-4">Kaffe, tilbehør og våre anbefalinger</h3>
               <p className="text-white/60">
-                Vi har valgt ut kaffe, te, kakao og tilbehør fra leverandører vi vet leverer kvalitet – basert på det som faktisk fungerer på norske arbeidsplasser.
+                Vi har samlet kaffe, te, kakao og tilbehør fra leverandører vi vet leverer kvalitet – så dere enkelt kan finne det som passer best hos dere.
               </p>
             </div>
             <Button variant="outline">Se alle produkter</Button>
