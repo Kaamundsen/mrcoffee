@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-7 md:px-6 flex justify-between items-center">
           <div className="flex items-center">
             <img
               src="/images/MrCoffee_Logo.svg"
@@ -248,7 +248,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-chinese-black via-transparent to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-7 md:px-6 w-full">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -290,7 +290,7 @@ export default function App() {
 
       {/* Kvalitet Section */}
       <section id="kvalitet" className="py-24 md:py-32 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-7 md:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeading 
@@ -344,7 +344,7 @@ export default function App() {
 
       {/* Produkter Section */}
       <section id="produkter" className="py-24 md:py-32 bg-dark-jungle">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-7 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <SectionHeading 
               subtitle="Produkter og løsninger" 
@@ -419,7 +419,7 @@ export default function App() {
 
       {/* Service Section */}
       <section id="service" className="py-24 md:py-32 relative">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-7 md:px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div className="order-2 md:order-1 flex justify-center items-center md:block">
               <div className="relative aspect-square w-[min(100%,18rem)] shrink-0 md:w-full md:max-w-none">
@@ -466,7 +466,7 @@ export default function App() {
 
       {/* Om Oss Section */}
       <section id="om-oss" className="py-24 md:py-32 bg-white text-chinese-black">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-7 md:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeading 
@@ -541,7 +541,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/55 via-[#0f0c0a]/48 to-[#0d0907]/94" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-7 md:px-6">
           <div className="glass p-12 md:p-20 rounded-[60px] border-white/5 bg-chinese-black/40">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-32 md:w-48 flex-shrink-0">
@@ -573,7 +573,7 @@ export default function App() {
 
       {/* Kontakt Section */}
       <section id="kontakt" className="py-24 md:py-32 atmosphere-bg">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-7 md:px-6">
           <div className="glass p-12 md:p-20 rounded-[60px] relative overflow-hidden">
             <div className="relative z-10 grid md:grid-cols-2 gap-16">
               <div>
@@ -649,7 +649,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-12 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="max-w-7xl mx-auto px-7 md:px-6 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center">
             <img src="/images/MrCoffee_Logo.svg" alt="MrCoffee Logo" className="h-16 w-auto" />
           </div>
