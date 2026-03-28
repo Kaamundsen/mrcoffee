@@ -573,9 +573,9 @@ export default function App() {
 
       {/* Kontakt Section */}
       <section id="kontakt" className="py-24 md:py-32 atmosphere-bg">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="glass px-4 py-9 sm:px-5 sm:py-10 md:p-20 rounded-[40px] md:rounded-[60px] relative overflow-hidden">
-            <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="glass p-12 md:p-20 rounded-[60px] relative overflow-hidden">
+            <div className="relative z-10 grid md:grid-cols-2 gap-16">
               <div>
                 <SectionHeading 
                   subtitle="Bestilling / Kontakt" 
@@ -616,27 +616,24 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="w-full rounded-2xl bg-transparent px-0 py-4 sm:py-5 md:rounded-3xl md:border md:border-white/10 md:bg-white/[0.04] md:px-0 md:py-8 md:backdrop-blur-md">
-                <form
-                  className="space-y-6 max-md:pl-16 md:pl-0"
-                  onSubmit={(e) => e.preventDefault()}
-                >
+              <div className="glass px-3 py-6 sm:px-5 md:p-12 rounded-2xl md:rounded-3xl">
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <label className="text-xs uppercase tracking-widest text-white/50 ml-0">Navn</label>
+                      <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Navn</label>
                       <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="Ditt navn" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs uppercase tracking-widest text-white/50 ml-0">Bedrift</label>
+                      <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Bedrift</label>
                       <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="Bedriftsnavn" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-white/50 ml-0">E-post</label>
+                    <label className="text-xs uppercase tracking-widest text-white/50 ml-2">E-post</label>
                     <input type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="din@epost.no" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-white/50 ml-0">Melding</label>
+                    <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Melding</label>
                     <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors resize-none" placeholder="Hvordan kan vi hjelpe deg?"></textarea>
                   </div>
                   <Button className="w-full">Send forespørsel</Button>
