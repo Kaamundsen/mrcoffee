@@ -275,6 +275,9 @@ export default function App() {
                 <Button>Bestill kaffeløsning</Button>
                 <Button variant="secondary">Kontakt oss</Button>
               </div>
+              <p className="mt-6 max-w-2xl text-xs md:text-sm text-white/45 italic leading-relaxed">
+                * Gjelder utvalgte løsninger og forutsetter normalt jevnt forbruk. Kontakt oss for anbefaling til din bedrift.
+              </p>
             </motion.div>
           </div>
         </div>
