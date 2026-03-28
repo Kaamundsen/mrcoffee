@@ -17,7 +17,9 @@ import {
   Phone, 
   Mail, 
   MapPin,
-  Leaf
+  Leaf,
+  Diamond,
+  Flower2
 } from 'lucide-react';
 
 // --- Components ---
@@ -405,17 +407,66 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-20 glass p-12 rounded-[40px] flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Midlertidig skjult — gjenaktiver når ønsket */}
+          {false && (
+            <div className="mt-20 glass p-12 rounded-[40px] flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <h3 className="text-3xl font-serif mb-4">Alt samlet på ett sted</h3>
+                <p className="text-white/60">
+                  I tillegg leverer vi kaffeprodukter som bønner, filterkaffe, te, kakao og melk – alt du trenger for en komplett kaffepause.
+                </p>
+              </div>
+              <Button variant="outline">Se alle produkter</Button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Kaffe og sortiment Section */}
+      <section id="kaffe-og-sortiment" className="pb-24 md:pb-32 bg-dark-jungle">
+        <div className="max-w-7xl mx-auto px-7 md:px-6">
+          <div className="glass p-12 rounded-[40px] flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
-              <h3 className="text-3xl font-serif mb-4">Alt samlet på ett sted</h3>
+              <h3 className="text-3xl font-serif mb-4">Kaffe og sortiment</h3>
               <p className="text-white/60">
-                I tillegg leverer vi kaffeprodukter som bønner, filterkaffe, te, kakao og melk – alt du trenger for en komplett kaffepause.
+                Alt du trenger for en god kaffepause – kaffe, te, kakao, melk og tilbehør fra utvalgte leverandører. Tilpasset smaken på akkurat deres arbeidsplass.
               </p>
             </div>
             <Button variant="outline">Se alle produkter</Button>
           </div>
         </div>
       </section>
+
+      {/* Kaffe og sortiment — bakgrunnsbilde-versjon (deaktivert) */}
+      {false && (
+        <section id="kaffe-og-sortiment-v2" className="py-24 md:py-32 relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/images/kaffesmak-bakgrunn.jpg"
+              alt=""
+              className="w-full h-full object-cover opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-chinese-black/60 via-transparent to-chinese-black/80" />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-7 md:px-6">
+            <SectionHeading subtitle="Kaffe og sortiment" title="Hvordan vil du at kaffen skal smake?" />
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { icon: <Coffee size={28} />, name: "Vanlige mannen i gata", desc: "Klassisk og tilgjengelig – kaffe alle kjenner seg igjen i." },
+                { icon: <Diamond size={28} />, name: "Feinsmekker'n", desc: "Spesialkaffe fra mikrobrennerier med karakter og dybde." },
+                { icon: <Flower2 size={28} />, name: "Trommer'n", desc: "Kraftig og fyldig – for de som vil kjenne at det er kaffe." },
+              ].map((item, i) => (
+                <motion.div key={item.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group p-8 rounded-3xl border border-white/10 hover:border-antique-brass/40 bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-sm transition-all duration-300">
+                  <div className="text-antique-brass/50 group-hover:text-antique-brass transition-colors duration-300 mb-6">{item.icon}</div>
+                  <h3 className="font-serif text-2xl md:text-3xl text-white group-hover:text-antique-brass transition-colors duration-300 leading-tight mb-4">{item.name}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-10"><Button variant="outline">Se alle produkter</Button></div>
+          </div>
+        </section>
+      )}
 
       {/* Service Section */}
       <section id="service" className="py-24 md:py-32 relative">
