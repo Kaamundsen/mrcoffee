@@ -421,9 +421,9 @@ export default function App() {
       <section id="service" className="py-24 md:py-32 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div className="order-2 md:order-1 flex justify-center md:block">
-              <div className="relative aspect-square w-full max-w-[min(100%,18rem)] shrink-0 md:max-w-none">
-                <div className="absolute inset-0 aspect-square rounded-full border-2 border-dashed border-antique-brass/30 p-6 md:p-8 animate-[spin_20s_linear_infinite]">
+            <div className="order-2 md:order-1 flex justify-center items-center md:block">
+              <div className="relative aspect-square w-[min(100%,18rem)] shrink-0 md:w-full md:max-w-none">
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-antique-brass/30 p-6 md:p-8 animate-[spin_20s_linear_infinite] box-border">
                   <div className="h-full w-full rounded-full border border-antique-brass/10" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -493,7 +493,7 @@ export default function App() {
               </div>
             </div>
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 items-start">
                 <div className="space-y-4">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                     <img src="/images/om-oss-kaffe.jpg" alt="Coffee" className="w-full h-full object-cover" />
@@ -573,9 +573,9 @@ export default function App() {
 
       {/* Kontakt Section */}
       <section id="kontakt" className="py-24 md:py-32 atmosphere-bg">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass p-12 md:p-20 rounded-[60px] relative overflow-hidden">
-            <div className="relative z-10 grid md:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="glass p-6 md:p-20 rounded-[40px] md:rounded-[60px] relative overflow-hidden">
+            <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-16">
               <div>
                 <SectionHeading 
                   subtitle="Bestilling / Kontakt" 
@@ -587,7 +587,7 @@ export default function App() {
                 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-antique-brass">
+                    <div className="inline-flex size-12 shrink-0 aspect-square glass rounded-full items-center justify-center text-antique-brass">
                       <Phone size={20} />
                     </div>
                     <div>
@@ -596,7 +596,7 @@ export default function App() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-antique-brass">
+                    <div className="inline-flex size-12 shrink-0 aspect-square glass rounded-full items-center justify-center text-antique-brass">
                       <Mail size={20} />
                     </div>
                     <div>
@@ -605,7 +605,7 @@ export default function App() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-antique-brass">
+                    <div className="inline-flex size-12 shrink-0 aspect-square glass rounded-full items-center justify-center text-antique-brass">
                       <MapPin size={20} />
                     </div>
                     <div>
@@ -616,7 +616,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="glass p-8 md:p-12 rounded-3xl">
+              <div className="glass px-3 py-6 sm:px-5 md:p-12 rounded-2xl md:rounded-3xl">
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
