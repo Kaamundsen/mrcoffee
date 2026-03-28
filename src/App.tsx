@@ -616,7 +616,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="glass px-3 py-6 sm:px-5 md:p-12 rounded-2xl md:rounded-3xl">
+              <div className="glass p-8 md:p-12 rounded-3xl">
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
