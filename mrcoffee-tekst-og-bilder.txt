@@ -186,9 +186,5 @@ BILDEFILER (stier som i App.tsx — legg i public/images/ med unntak av notat)
 /images/miljofyrtarn-sertifisert-virksomhet-vertikal-RGB.svg
   → miljofyrtarn-sertifisert-virksomhet-vertikal-RGB.svg
 
-Ekstra i public/images/ (ikke referert i App.tsx):
-  miljofyrtarn-sertifisert-virksomhet-horisontal-RGB.svg
-
 Ikoner i koden brukes via lucide-react (Coffee, CheckCircle2, Clock, ShieldCheck,
-Droplets, ChevronRight, Menu, X, Phone, Mail, MapPin, Leaf). Tilsvarende SVG ligger
-valgfritt under public/icons/ (coffee.svg, mail.svg, osv.).
+Droplets, ChevronRight, Menu, X, Phone, Mail, MapPin, Leaf).
