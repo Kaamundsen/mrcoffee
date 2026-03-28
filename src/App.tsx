@@ -616,24 +616,24 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="glass px-3 py-6 sm:px-5 md:p-12 rounded-2xl md:rounded-3xl">
+              <div className="glass rounded-2xl px-3 py-6 sm:px-5 md:w-full md:rounded-3xl md:border md:border-white/10 md:bg-white/[0.04] md:px-0 md:py-8 md:backdrop-blur-md">
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Navn</label>
+                      <label className="text-xs uppercase tracking-widest text-white/50 ml-2 md:ml-0">Navn</label>
                       <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="Ditt navn" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Bedrift</label>
+                      <label className="text-xs uppercase tracking-widest text-white/50 ml-2 md:ml-0">Bedrift</label>
                       <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="Bedriftsnavn" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-white/50 ml-2">E-post</label>
+                    <label className="text-xs uppercase tracking-widest text-white/50 ml-2 md:ml-0">E-post</label>
                     <input type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors" placeholder="din@epost.no" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-white/50 ml-2">Melding</label>
+                    <label className="text-xs uppercase tracking-widest text-white/50 ml-2 md:ml-0">Melding</label>
                     <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-antique-brass transition-colors resize-none" placeholder="Hvordan kan vi hjelpe deg?"></textarea>
                   </div>
                   <Button className="w-full">Send forespørsel</Button>
