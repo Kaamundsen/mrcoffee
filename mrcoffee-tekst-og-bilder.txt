@@ -1,0 +1,194 @@
+MrCoffee.no — tekst og bildefiler (hentet fra App.tsx og index.html)
+=====================================================================
+
+index.html
+----------
+Tittel: MrCoffee.no - Kaffeløsninger til kontoret
+
+
+Navigasjon
+----------
+Hjem
+Maskiner (undermeny: Kaffemaskiner, Kaffetraktere, Vannmaskiner)
+Produkter
+Om oss
+Service
+Bestilling
+Kontakt
+aria: Åpne meny, Lukk meny
+
+
+Hero
+----
+H1: Gratis kaffemaskin / til kontoret. (sistnevnte i kursiv-stil i designet)
+Badges: Gratis leie | Gratis service | Ingen bindingstid
+Brødtekst: Vi leverer kaffeløsninger til kontor og bedrifter – uten risiko og uten unødvendige kostnader. Få bedre kaffe på jobb uten å binde deg til lange avtaler.
+Knapper: Bestill kaffeløsning | Kontakt oss
+Alt-tekst bilde: Premium Coffee
+
+
+Kvalitet
+--------
+Undertittel: Kvalitet på kaffe
+Tittel: Kaffe folk faktisk vil drikke.
+
+Avsnitt 1:
+Det hjelper ikke med en kaffemaskin hvis kaffen ikke smaker godt. Derfor jobber vi med utvalgte mikrobrennerier og leverandører som leverer kvalitet – hver gang.
+
+Avsnitt 2:
+Vi tilbyr blant annet kaffe fra Den Gyldne Bønne og utvalgte brennerier i Stockholm, inkludert GasHaga på Lidingö, som har oppnådd topp plassering internasjonalt.
+
+Avsnitt 3:
+Hos oss får du ikke bare kaffe – du får en løsning som er tilpasset smaken på arbeidsplassen. Selv kakaoen smaker slik den skal – som sjokolade.
+
+Kort 1 — Mikrobrennerier
+Håndplukkede bønner fra de beste brenneriene.
+
+Kort 2 — Bærekraftig
+Miljøfyrtårn-sertifisert og etisk handel.
+
+Alt-tekst bilde: Coffee Roastery
+
+
+Produkter
+---------
+Undertittel: Produkter og løsninger
+Tittel: Kaffeløsninger tilpasset din bedrift.
+
+Ingress:
+Vi leverer kaffemaskiner og drikkeløsninger til kontorer og arbeidsplasser. Enten dere er 20 ansatte eller flere, finner vi en løsning som passer behovet deres.
+
+Kaffemaskiner
+Beskrivelse: Kaffemaskiner for den perfekte koppen.
+Knappetekst: Se våre kaffemaskiner
+
+Kaffetraktere
+Beskrivelse: Tradisjonell trakting for store og små kontorer.
+Knappetekst: Se våre kaffetraktere
+
+Vannmaskiner
+Beskrivelse: Friskt, kaldt vann med og uten kullsyre.
+Knappetekst: Se våre vannmaskiner
+
+Stripe — Alt samlet på ett sted
+I tillegg leverer vi kaffeprodukter som bønner, filterkaffe, te, kakao og melk – alt du trenger for en komplett kaffepause.
+Knapp: Se alle produkter
+
+
+Service
+-------
+Sirkel: 1-2 | Timer responstid
+
+Undertittel: Service
+Tittel: Service som faktisk fungerer.
+
+Avsnitt:
+Når kaffemaskinen stopper, må det løses raskt. Derfor er service det viktigste vi gjør. Vi er på plass innen 1–2 timer ved behov.
+
+Gratis service
+Alle våre maskiner inkluderer full serviceavtale uten ekstra kostnad.
+
+Rask support
+I de fleste tilfeller løser vi problemet over telefon – raskt og effektivt.
+
+Knapp: Kontakt oss
+
+
+Om oss
+------
+Undertittel: Om oss
+Tittel: Erfaring du kan stole på.
+
+Avsnitt 1:
+MrCoffee er et 100 % norskeid selskap med over 17 års erfaring i å levere kaffeløsninger til norske arbeidsplasser.
+
+Avsnitt 2:
+Vi serverer i dag over 70.000 kopper varm drikke hver eneste dag, og har fornøyde kunder over store deler av landet.
+
+Miljøfyrtårn-sertifisert
+Et bevis på at vi tar bærekraft på alvor – i alt vi leverer.
+Knapp: Om oss
+
+Tall: 17+ | Års erfaring
+Tall: 70.000 | Kopper daglig
+
+Alt-tekst bilder: Coffee | Coffee Cup
+
+
+Bærekraft (Miljøfyrtårn-seksjon)
+--------------------------------
+Alt bakgrunnsbilde: Sustainable Coffee Production
+Alt logo: Miljøfyrtårn-sertifisert virksomhet
+
+Undertittel: Bærekraft
+Tittel: Vi tar ansvar for fremtiden.
+
+Brødtekst:
+MrCoffee er stolte av å være Miljøfyrtårn-sertifisert. Vi jobber kontinuerlig med å redusere vårt miljøavtrykk gjennom bærekraftige kaffeløsninger, etisk handel og miljøvennlig logistikk.
+
+Punkter: Etisk handel | Gjenbrukbare løsninger | CO2-nøytral frakt
+
+
+Kontakt / bestilling
+--------------------
+Undertittel: Bestilling / Kontakt
+Tittel: Klar for bedre kaffe på jobben?
+
+Ingress:
+Ta kontakt med oss for en løsning tilpasset din bedrift. Det er enkelt å komme i gang, og vi hjelper deg hele veien.
+
+Ring oss: 64 86 68 00
+E-post: post@mrcoffee.no
+Besøk oss: Gneisveien 2, 1914 Ytre Enebakk
+
+Skjemafelt: Navn | Bedrift | E-post | Melding
+Placeholders: Ditt navn | Bedriftsnavn | din@epost.no | Hvordan kan vi hjelpe deg?
+Knapp: Send forespørsel
+
+
+Footer
+------
+© 2026 MrCoffee.no — 100% Norskeid
+Sosiale lenker (tekst): Facebook | Instagram | LinkedIn
+
+
+=====================================================================
+BILDEFILER (stier som i App.tsx — legg i public/images/ med unntak av notat)
+=====================================================================
+
+/images/MrCoffee_Logo.svg
+  → MrCoffee_Logo.svg
+
+/images/hero-kaffe.jpg
+  → hero-kaffe.jpg
+
+/images/mikrobrennerier.jpg
+  → mikrobrennerier.jpg
+
+/images/produkt-kaffemaskin.jpg
+  → produkt-kaffemaskin.jpg
+
+/images/produkt-kaffetrakter.jpg
+  → produkt-kaffetrakter.jpg
+
+/images/produkt-vannmaskin.jpg
+  → produkt-vannmaskin.jpg
+
+/images/om-oss-kaffe.jpg
+  → om-oss-kaffe.jpg
+
+/images/om-oss-kaffekopp.jpg
+  → om-oss-kaffekopp.jpg
+
+/images/baerekraft-bakgrunn_2.jpeg
+  → baerekraft-bakgrunn_2.jpeg
+
+/images/miljofyrtarn-sertifisert-virksomhet-vertikal-RGB.svg
+  → miljofyrtarn-sertifisert-virksomhet-vertikal-RGB.svg
+
+Ekstra i public/images/ (ikke referert i App.tsx):
+  miljofyrtarn-sertifisert-virksomhet-horisontal-RGB.svg
+
+Ikoner i koden brukes via lucide-react (Coffee, CheckCircle2, Clock, ShieldCheck,
+Droplets, ChevronRight, Menu, X, Phone, Mail, MapPin, Leaf). Tilsvarende SVG ligger
+valgfritt under public/icons/ (coffee.svg, mail.svg, osv.).
