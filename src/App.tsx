@@ -257,7 +257,7 @@ export default function App() {
             >
               <h1 className="text-6xl md:text-8xl font-serif leading-[0.9] mb-8">
                 Gratis kaffemaskin <br />
-                <span className="text-antique-brass italic">til kontoret.</span>
+                <span className="text-antique-brass italic">til kontoret?</span>
               </h1>
               <div className="flex flex-wrap gap-4 mb-8">
                 {['Gratis leie', 'Gratis service', 'Ingen bindingstid'].map((item) => (
