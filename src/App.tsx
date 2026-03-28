@@ -398,7 +398,7 @@ export default function App() {
                   <h3 className="text-2xl font-serif mb-2">{item.title}</h3>
                   <p className="text-sm text-white/60 mb-6">{item.desc}</p>
                   <button className="flex items-center gap-2 text-antique-brass text-sm font-semibold group-hover:gap-4 transition-all">
-                    Se våre {item.title.toLowerCase()} <ChevronRight size={16} />
+                    Se {item.title.toLowerCase()} <ChevronRight size={16} />
                   </button>
                 </div>
               </motion.div>
