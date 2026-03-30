@@ -217,8 +217,8 @@ BILDEFILER (stier som i App.tsx — legg i public/images/ med unntak av notat)
 /images/MrCoffee_Logo.svg
   → MrCoffee_Logo.svg
 
-/images/hero-kontor.png
-  → hero-kontor.png
+/images/hero-kontor.jpg
+  → hero-kontor.jpg
 
 /images/mikrobrennerier.jpg
   → mikrobrennerier.jpg

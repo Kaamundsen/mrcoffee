@@ -5,21 +5,21 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Coffee, 
-  CheckCircle2, 
-  Clock, 
-  ShieldCheck, 
-  Droplets, 
-  ChevronRight, 
-  Menu, 
-  X, 
-  Phone, 
-  Mail, 
-  MapPin,
-  Leaf,
+import {
+  CheckCircle2,
+  ChevronRight,
+  Clock,
+  Coffee,
   Diamond,
-  Flower2
+  Droplets,
+  Flower2,
+  Leaf,
+  Mail,
+  MapPin,
+  Menu,
+  Phone,
+  ShieldCheck,
+  X,
 } from 'lucide-react';
 
 // --- Components ---
@@ -232,9 +232,9 @@ const Button = ({
 
 const HERO_SLIDES = [
   {
-    src: '/images/hero-kontor.png',
+    src: '/images/hero-kontor.jpg',
     imgClass:
-      'absolute inset-0 h-[calc(100%+450px)] w-full max-w-none object-cover object-top origin-top scale-105 -translate-y-[450px] opacity-40',
+      'absolute inset-0 h-[calc(100%+380px)] w-full max-w-none object-cover object-top origin-top scale-105 -translate-y-[380px] opacity-40',
   },
   {
     src: '/images/hero-kaffe.jpg',
@@ -244,11 +244,13 @@ const HERO_SLIDES = [
 
 const HERO_BG_INTERVAL_MS = 7000;
 const HERO_BG_FADE_MS = 2000;
+/** Første synlige slide (1 = andre bildet i listen, hero-kaffe) */
+const HERO_BG_INITIAL_INDEX = 1;
 
 // --- Main App ---
 
 export default function App() {
-  const [heroBgIndex, setHeroBgIndex] = useState(0);
+  const [heroBgIndex, setHeroBgIndex] = useState(HERO_BG_INITIAL_INDEX);
   const [heroMotionOk, setHeroMotionOk] = useState(true);
 
   useEffect(() => {
@@ -269,7 +271,7 @@ export default function App() {
   }, [heroMotionOk]);
 
   const heroLayerActive = (i: number) =>
-    heroMotionOk ? heroBgIndex === i : i === 0;
+    heroMotionOk ? heroBgIndex === i : i === HERO_BG_INITIAL_INDEX;
 
   return (
     <div className="min-h-screen selection:bg-antique-brass selection:text-chinese-black">
