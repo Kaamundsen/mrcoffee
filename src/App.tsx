@@ -230,24 +230,71 @@ const Button = ({
   );
 };
 
+const HERO_SLIDES = [
+  {
+    src: '/images/hero-kontor.png',
+    imgClass:
+      'absolute inset-0 h-[calc(100%+450px)] w-full max-w-none object-cover object-top origin-top scale-105 -translate-y-[450px] opacity-40',
+  },
+  {
+    src: '/images/hero-kaffe.jpg',
+    imgClass: 'absolute inset-0 h-full w-full object-cover opacity-40 scale-105',
+  },
+] as const;
+
+const HERO_BG_INTERVAL_MS = 7000;
+const HERO_BG_FADE_MS = 2000;
+
 // --- Main App ---
 
 export default function App() {
+  const [heroBgIndex, setHeroBgIndex] = useState(0);
+  const [heroMotionOk, setHeroMotionOk] = useState(true);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const sync = () => setHeroMotionOk(!mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
+
+  useEffect(() => {
+    if (!heroMotionOk) return;
+    const id = window.setInterval(
+      () => setHeroBgIndex((i) => (i + 1) % HERO_SLIDES.length),
+      HERO_BG_INTERVAL_MS
+    );
+    return () => window.clearInterval(id);
+  }, [heroMotionOk]);
+
+  const heroLayerActive = (i: number) =>
+    heroMotionOk ? heroBgIndex === i : i === 0;
+
   return (
     <div className="min-h-screen selection:bg-antique-brass selection:text-chinese-black">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Hvert lag: bilde + gradienter fader sammen (synkronisert filter) */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/hero-kaffe.jpg" 
-            alt="Premium Coffee" 
-            className="w-full h-full object-cover opacity-40 scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-chinese-black via-chinese-black/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-chinese-black via-transparent to-transparent" />
+          {HERO_SLIDES.map((slide, i) => (
+            <div
+              key={slide.src}
+              className={`pointer-events-none absolute inset-0 transition-opacity ease-in-out ${
+                heroLayerActive(i) ? 'z-10 opacity-100' : 'z-0 opacity-0'
+              }`}
+              style={{
+                transitionDuration: heroMotionOk ? `${HERO_BG_FADE_MS}ms` : '0ms',
+              }}
+              aria-hidden
+            >
+              <img src={slide.src} alt="" className={slide.imgClass} />
+              <div className="absolute inset-0 bg-gradient-to-t from-chinese-black via-chinese-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-chinese-black via-transparent to-transparent" />
+            </div>
+          ))}
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-7 md:px-6 w-full">

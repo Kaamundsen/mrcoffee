@@ -3,32 +3,40 @@ MrCoffee.no — tekst og bildefiler (hentet fra App.tsx og index.html)
 
 index.html
 ----------
+Språkattributt: lang="en" (innholdet på siden er norsk)
+Charset: UTF-8
+Viewport: width=device-width, initial-scale=1.0
 Tittel: MrCoffee.no - Kaffeløsninger til kontoret
 
 
-Navigasjon
-----------
-Hjem
-Maskiner (undermeny: Kaffemaskiner, Kaffetraktere, Vannmaskiner)
-Produkter
-Om oss
-Service
-Bestilling
-Kontakt
+Navigasjon (lenker er anker #)
+-------------------------------
+Hjem (#)
+Maskiner (undermeny: Kaffemaskiner, Kaffetraktere, Vannmaskiner) → #produkter
+Produkter (#produkter)
+Om oss (#om-oss)
+Service (#service)
+Bestilling (#kontakt)
+Kontakt (#kontakt)
+
+Merk: Seksjonen «Kvalitet» har id #kvalitet men er ikke eget menypunkt.
+      Seksjonen «Kaffe og sortiment» har id #kaffe-og-sortiment (ikke eget toppmenypunkt).
+
+Logo (navbar): /images/MrCoffee_Logo.svg — alt-tekst: MrCoffee Logo
 aria: Åpne meny, Lukk meny
 
 
-Hero
-----
-H1: Gratis kaffemaskin / til kontoret. (sistnevnte i kursiv-stil i designet)
+Hero (# — øverst på siden)
+--------------------------
+H1: Gratis kaffemaskin + linjeskift + «til kontoret.» (sistnevnte i kursiv / antique-brass i designet)
 Badges: Gratis leie | Gratis service | Ingen bindingstid
 Brødtekst: Vi leverer kaffeløsninger til kontor og bedrifter – uten risiko og uten unødvendige kostnader. Få bedre kaffe på jobb uten å binde deg til lange avtaler.
-Knapper: Bestill kaffeløsning | Kontakt oss
+Knapper: Bestill kaffeløsning | Kontakt oss (ingen href i koden)
 Alt-tekst bilde: Premium Coffee
 
 
-Kvalitet
---------
+Kvalitet (#kvalitet)
+--------------------
 Undertittel: Kvalitet på kaffe
 Tittel: Kaffe folk faktisk vil drikke.
 
@@ -36,22 +44,24 @@ Avsnitt 1:
 Det hjelper ikke med en kaffemaskin hvis kaffen ikke smaker godt. Derfor jobber vi med utvalgte mikrobrennerier og leverandører som leverer kvalitet – hver gang.
 
 Avsnitt 2:
-Vi tilbyr blant annet kaffe fra Den Gyldne Bønne og utvalgte brennerier i Stockholm, inkludert GasHaga på Lidingö, som har oppnådd topp plassering internasjonalt.
+Vi tilbyr blant annet kaffe fra Den Gyldne Bønne og utvalgte brennerier i Stockholm, inkludert GasHaga på Lidingö, som har oppnådd topp plassering internasjonalt. (Navn uthevet i designet.)
 
 Avsnitt 3:
 Hos oss får du ikke bare kaffe – du får en løsning som er tilpasset smaken på arbeidsplassen. Selv kakaoen smaker slik den skal – som sjokolade.
 
-Kort 1 — Mikrobrennerier
+Kort 1 — Mikrobrennerier (ikon: Coffee)
 Håndplukkede bønner fra de beste brenneriene.
 
-Kort 2 — Bærekraftig
+Kort 2 — Bærekraftig (ikon: Leaf)
 Miljøfyrtårn-sertifisert og etisk handel.
 
 Alt-tekst bilde: Coffee Roastery
 
 
-Produkter
----------
+Produkter (#produkter)
+----------------------
+Bakgrunn: bg-dark-jungle (designnote)
+
 Undertittel: Produkter og løsninger
 Tittel: Kaffeløsninger tilpasset din bedrift.
 
@@ -60,23 +70,56 @@ Vi leverer kaffemaskiner og drikkeløsninger til kontorer og arbeidsplasser. Ent
 
 Kaffemaskiner
 Beskrivelse: Kaffemaskiner for den perfekte koppen.
-Knappetekst: Se våre kaffemaskiner
+Ikon: Coffee
+Knappetekst: Se kaffemaskiner
 
 Kaffetraktere
 Beskrivelse: Tradisjonell trakting for store og små kontorer.
-Knappetekst: Se våre kaffetraktere
+Ikon: Clock
+Knappetekst: Se kaffetraktere
 
 Vannmaskiner
 Beskrivelse: Friskt, kaldt vann med og uten kullsyre.
-Knappetekst: Se våre vannmaskiner
+Ikon: Droplets
+Knappetekst: Se vannmaskiner
 
-Stripe — Alt samlet på ett sted
-I tillegg leverer vi kaffeprodukter som bønner, filterkaffe, te, kakao og melk – alt du trenger for en komplett kaffepause.
-Knapp: Se alle produkter
+Produktkort: alt på bilder = tittel (Kaffemaskiner / Kaffetraktere / Vannmaskiner), referrerPolicy="no-referrer"
 
 
-Service
--------
+Kaffe og sortiment (#kaffe-og-sortiment) — AKTIV
+-------------------------------------------------
+Plassering: Under produktgrid, samme bakgrunn som produkter (bg-dark-jungle).
+Layout: glass-boks, avrundet, rad på desktop (tekst + knapp).
+
+Tittel (H3): Kaffe, tilbehør og våre anbefalinger
+Brødtekst:
+Vi har samlet kaffe, te, kakao og tilbehør fra leverandører vi vet leverer kvalitet – så dere enkelt kan finne det som passer best hos dere.
+Knapp: Se alle produkter (variant outline)
+
+
+Midlertidig skjult / deaktivert i koden (for referanse)
+-------------------------------------------------------
+
+1) «Alt samlet på ett sted» (Stripe under produkter)
+   Utkommentert med {false && ...} — vises ikke i produksjon.
+   Tittel: Alt samlet på ett sted
+   Tekst: I tillegg leverer vi kaffeprodukter som bønner, filterkaffe, te, kakao og melk – alt du trenger for en komplett kaffepause.
+   Knapp: Se alle produkter
+
+2) Alternativ seksjon «Kaffe og sortiment» med bakgrunnsbilde (id #kaffe-og-sortiment-v2)
+   Deaktivert med {false && ...}
+   Bakgrunn: /images/kaffesmak-bakgrunn.jpg (opacity, gradient over)
+   Undertittel: Kaffe og sortiment
+   Tittel: Hvordan vil du at kaffen skal smake?
+   Tre kort:
+   - Vanlige mannen i gata (Coffee): Klassisk og tilgjengelig – kaffe alle kjenner seg igjen i.
+   - Feinsmekker'n (Diamond): Spesialkaffe fra mikrobrennerier med karakter og dybde.
+   - Trommer'n (Flower2): Kraftig og fyldig – for de som vil kjenne at det er kaffe.
+   Knapp under: Se alle produkter
+
+
+Service (#service)
+------------------
 Sirkel: 1-2 | Timer responstid
 
 Undertittel: Service
@@ -85,17 +128,19 @@ Tittel: Service som faktisk fungerer.
 Avsnitt:
 Når kaffemaskinen stopper, må det løses raskt. Derfor er service det viktigste vi gjør. Vi er på plass innen 1–2 timer ved behov.
 
-Gratis service
+Gratis service (ikon: ShieldCheck)
 Alle våre maskiner inkluderer full serviceavtale uten ekstra kostnad.
 
-Rask support
+Rask support (ikon: Phone)
 I de fleste tilfeller løser vi problemet over telefon – raskt og effektivt.
 
 Knapp: Kontakt oss
 
 
-Om oss
-------
+Om oss (#om-oss)
+----------------
+Bakgrunn: hvit, tekst chinese-black (designnote)
+
 Undertittel: Om oss
 Tittel: Erfaring du kan stole på.
 
@@ -103,20 +148,20 @@ Avsnitt 1:
 MrCoffee er et 100 % norskeid selskap med over 17 års erfaring i å levere kaffeløsninger til norske arbeidsplasser.
 
 Avsnitt 2:
-Vi serverer i dag over 70.000 kopper varm drikke hver eneste dag, og har fornøyde kunder over store deler av landet.
+Vi serverer i dag over 70.000 kopper varm drikke hver eneste dag, og har fornøyde kunder over store deler av landet. (Tallet «70.000 kopper» er uthevet.)
 
 Miljøfyrtårn-sertifisert
 Et bevis på at vi tar bærekraft på alvor – i alt vi leverer.
-Knapp: Om oss
+Knapp: Om oss (variant outlineDark, href="#om-oss")
 
-Tall: 17+ | Års erfaring
-Tall: 70.000 | Kopper daglig
+Tall-kort: 17+ | Års erfaring (på kort med MrCoffee-logo som dekorativt bakgrunnsbilde, alt="" aria-hidden)
+Tall-kort: 70.000 | Kopper daglig (mørk bakgrunn, Coffee-ikon dekorativt)
 
 Alt-tekst bilder: Coffee | Coffee Cup
 
 
-Bærekraft (Miljøfyrtårn-seksjon)
---------------------------------
+Bærekraft / Miljøfyrtårn (#baerekraft)
+---------------------------------------
 Alt bakgrunnsbilde: Sustainable Coffee Production
 Alt logo: Miljøfyrtårn-sertifisert virksomhet
 
@@ -126,11 +171,13 @@ Tittel: Vi tar ansvar for fremtiden.
 Brødtekst:
 MrCoffee er stolte av å være Miljøfyrtårn-sertifisert. Vi jobber kontinuerlig med å redusere vårt miljøavtrykk gjennom bærekraftige kaffeløsninger, etisk handel og miljøvennlig logistikk.
 
-Punkter: Etisk handel | Gjenbrukbare løsninger | CO2-nøytral frakt
+Punkter (med CheckCircle2): Etisk handel | Gjenbrukbare løsninger | CO2-nøytral frakt
 
 
-Kontakt / bestilling
---------------------
+Kontakt / bestilling (#kontakt)
+-------------------------------
+Seksjon har klasse atmosphere-bg (designnote).
+
 Undertittel: Bestilling / Kontakt
 Tittel: Klar for bedre kaffe på jobben?
 
@@ -144,12 +191,23 @@ Besøk oss: Gneisveien 2, 1914 Ytre Enebakk
 Skjemafelt: Navn | Bedrift | E-post | Melding
 Placeholders: Ditt navn | Bedriftsnavn | din@epost.no | Hvordan kan vi hjelpe deg?
 Knapp: Send forespørsel
+Skjema: onSubmit forhindrer standard innsending (preventDefault) — ingen backend i koden.
 
 
 Footer
 ------
+Logo: MrCoffee_Logo.svg — alt: MrCoffee Logo
 © 2026 MrCoffee.no — 100% Norskeid
-Sosiale lenker (tekst): Facebook | Instagram | LinkedIn
+Sosiale lenker (tekst, href="#"): Facebook | Instagram | LinkedIn
+
+
+Teknisk (stack) — fra package.json / README
+---------------------------------------------
+Vite, React 19, TypeScript, Tailwind CSS v4, motion (motion/react), lucide-react.
+Dev: npm run dev (port 3000, host 0.0.0.0)
+Bygg: npm run build → dist/
+Forhåndsvisning: npm run preview
+Lint: npm run lint (tsc --noEmit)
 
 
 =====================================================================
@@ -159,8 +217,8 @@ BILDEFILER (stier som i App.tsx — legg i public/images/ med unntak av notat)
 /images/MrCoffee_Logo.svg
   → MrCoffee_Logo.svg
 
-/images/hero-kaffe.jpg
-  → hero-kaffe.jpg
+/images/hero-kontor.png
+  → hero-kontor.png
 
 /images/mikrobrennerier.jpg
   → mikrobrennerier.jpg
@@ -186,5 +244,9 @@ BILDEFILER (stier som i App.tsx — legg i public/images/ med unntak av notat)
 /images/miljofyrtarn-sertifisert-virksomhet-vertikal-RGB.svg
   → miljofyrtarn-sertifisert-virksomhet-vertikal-RGB.svg
 
-Ikoner i koden brukes via lucide-react (Coffee, CheckCircle2, Clock, ShieldCheck,
-Droplets, ChevronRight, Menu, X, Phone, Mail, MapPin, Leaf).
+/images/kaffesmak-bakgrunn.jpg
+  → kaffesmak-bakgrunn.jpg  (kun brukt i deaktivert «kaffe-og-sortiment-v2»-variant)
+
+Ikoner i koden brukes via lucide-react:
+Coffee, CheckCircle2, Clock, ShieldCheck, Droplets, ChevronRight, Menu, X,
+Phone, Mail, MapPin, Leaf, Diamond, Flower2.
